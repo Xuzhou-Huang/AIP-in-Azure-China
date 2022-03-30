@@ -2,8 +2,6 @@
 
 ## Protect files without AIP Client Installed
 
-### Protection would fail by default
-
 If there's no AIP Client installed, there would be no sensitivity button to apply labels. 
 
 word:
@@ -11,6 +9,8 @@ word:
 
 outlook:
 ![image](https://user-images.githubusercontent.com/96280581/160785060-49e61399-aacf-4186-9a22-f575eac8c786.png)
+
+### Connection to RMS service would fail by default
 
 It would also fail to connect with RMS service to apply template **by default**. 
 
@@ -29,7 +29,7 @@ DNS Lookup failed looking up record for _rmsredir._http._tcp.partner.onmschina.c
 
 DNS Lookup failed looking up record for _rmsredir._http._tcp.onmschina.cn with 9003`
 ```
-## Connect to 21V RMS service by manually creating registry keys
+### Connect to 21V RMS service by manually creating registry keys
 
 Manually create the following two registry keys, referring to https://docs.microsoft.com/en-us/azure/information-protection/rms-client/client-deployment-notes.
 
