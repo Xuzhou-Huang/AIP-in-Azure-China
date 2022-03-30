@@ -1,4 +1,4 @@
-# Use with 21V default domain (partner.onmschina.cn)
+# Use AIP with 21V default domain (partner.onmschina.cn)
 
 ## Protect files without AIP Client Installed
 
