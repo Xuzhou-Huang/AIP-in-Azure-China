@@ -1,8 +1,8 @@
 # Use with 21V default domain (partner.onmschina.cn)
 
-# Protect files without AIP Client Installed
+## Protect files without AIP Client Installed
 
-## Protection would fail by default
+### Protection would fail by default
 
 If there's no AIP Client installed, there would be no sensitivity button to apply labels. 
 
