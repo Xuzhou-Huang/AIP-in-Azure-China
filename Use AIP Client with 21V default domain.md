@@ -110,4 +110,9 @@ Following the same steps [here](https://github.com/Xuzhou-Huang/AIP-by-21Vianet/
 
 After configuration above, AIP Client should be able to get and apply labels.
 
+**word**
 ![image](https://user-images.githubusercontent.com/96280581/160986533-b083784d-ac9a-4899-b6fa-2dd07edb8298.png)
+
+**outlook**
+![image](https://user-images.githubusercontent.com/96280581/160989184-c022d202-acd3-417d-8b98-d9c02ccc0196.png)
+
