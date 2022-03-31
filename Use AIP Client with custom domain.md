@@ -1,10 +1,10 @@
 # Setup AIP Client with custom domain
 
-### Step 1 - verify custom domain on Azure AD
+### Step 1 - Verify Custom Domain on Azure Portal
 
 Go to https://portal.azure.cn verify your custom domain by adding DNS record.
 
-### Step 2 - Complete setup in M365 for Exchange and Exchange Online Protection
+### Step 2 - Complete Setup in M365 for Exchange and Exchange Online Protection
 
 Go to https://portal.partner.microsoftonline.cn/ and follow the steps to corresponding DNS records.
 
