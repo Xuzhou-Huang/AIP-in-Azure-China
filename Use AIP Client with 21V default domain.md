@@ -1,4 +1,4 @@
-# Use AIP with 21V default domain (partner.onmschina.cn)
+# Use AIP with Azure China default domain (partner.onmschina.cn)
 
 ## Protect files without AIP Client Installed
 
@@ -10,9 +10,7 @@ word:
 outlook:
 ![image](https://user-images.githubusercontent.com/96280581/160785060-49e61399-aacf-4186-9a22-f575eac8c786.png)
 
-### Connection to RMS service would fail by default
-
-It would also fail to connect with RMS service to apply template **by default**. 
+### Connection to RMS service would fail with default configuration
 
 Logs under _C:\Users\\\<username>\AppData\Local\Microsoft\MSIPC\Logs_ show the following errors:
 
@@ -33,10 +31,10 @@ DNS Lookup failed looking up record for _rmsredir._http._tcp.onmschina.cn with 9
 
 Manually create the following two registry keys, referring to https://docs.microsoft.com/en-us/azure/information-protection/rms-client/client-deployment-notes.
 
-Registry key  | Type | Value
-------------- | ------------- | -------------
-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MSIPC\ServiceLocation\EnterpriseCertification | REG_SZ: default | https://RMS_Service_ID/_wmcs/Certification
-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MSIPC\ServiceLocation\EnterprisePublishing  | REG_SZ: default | https://RMS_Service_ID/_wmcs/Licensing
+Registry key  | Type | Name | Value
+------------- | ------------- | ------------- | -------------
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MSIPC\ServiceLocation\EnterpriseCertification | REG_SZ | default | https://RMS_Service_ID/_wmcs/Certification
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MSIPC\ServiceLocation\EnterprisePublishing  | REG_SZ | default | https://RMS_Service_ID/_wmcs/Licensing
 
 Connect to AIP service via Powershell to check your RMS Service Id
 
@@ -73,3 +71,35 @@ DocumentTrackingFeatureState              : Enabled
 
 After configuration above, connection with 21V RMS service would be recovered.
 
+## Install AIP Client to enable label application
+
+### Step 1 - Create the *Microsoft Information Protection Sync Service* service principal
+
+The Microsoft Information Protection Sync Service service principal is not available in Azure China tenants by default, and is required for Azure Information Protection.
+
+The following command only need to be run one time. If your tenant already have this service principal, please skip this step.
+
+```
+PS > Connect-azaccount -environmentname azurechinacloud
+
+Account                                   SubscriptionName             TenantId                             Environment    
+-------                                   ----------------             --------                             -----------    
+xuhuan@xxx.partner.onmschina.cn AVD with AAD Dual Federation 97195526-XXXX-XXXX-XXXX-36faa3980a03 AzureChinaCloud
+
+PS > New-AzADServicePrincipal -ApplicationId 870c4f2e-85b6-4d43-bdda-6ed9a579b725
+
+DisplayName                                   Id                                   AppId                               
+-----------                                   --                                   -----                               
+Microsoft Information Protection Sync Service 7c479261-XXXX-XXXX-XXXX-dd119d4634af 870c4f2e-85b6-4d43-bdda-6ed9a579b725
+```
+
+### Step 2 - Point to Azure China Environment by configuring resgitry key
+
+
+Registry key  | Type | Name | Value
+------------- | ------------- | ------------- | -------------
+HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\MSIP |  REG_DWORD | CloudEnvType | 6
+
+After configuration above, AIP Client should be able to get and apply labels.
+
+![image](https://user-images.githubusercontent.com/96280581/160986533-b083784d-ac9a-4899-b6fa-2dd07edb8298.png)
