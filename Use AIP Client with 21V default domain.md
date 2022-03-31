@@ -27,6 +27,7 @@ DNS Lookup failed looking up record for _rmsredir._http._tcp.partner.onmschina.c
 
 DNS Lookup failed looking up record for _rmsredir._http._tcp.onmschina.cn with 9003`
 ```
+
 ### Connect to 21V RMS service by manually creating registry keys
 
 Manually create the following two registry keys, referring to https://docs.microsoft.com/en-us/azure/information-protection/rms-client/client-deployment-notes.
@@ -70,6 +71,7 @@ DocumentTrackingFeatureState              : Enabled
 ```
 
 After configuration above, connection with 21V RMS service would be recovered.
+
 
 ## Install AIP Client to enable label application
 
