@@ -10,7 +10,7 @@
   outlook:
   ![image](https://user-images.githubusercontent.com/96280581/160785060-49e61399-aacf-4186-9a22-f575eac8c786.png)
 
-  ### Connection to RMS service would fail with default configuration
+### Connection to RMS service would fail with default configuration
 
   Logs under _C:\Users\\\<username>\AppData\Local\Microsoft\MSIPC\Logs_ show the following errors:
 
