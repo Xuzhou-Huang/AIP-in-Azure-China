@@ -98,6 +98,8 @@ After configuration above, connection with 21V RMS service would be recovered.
 
 ### Step 2 - Point to Azure China Environment to download label and label policies
 
+AIP apps on Windows need the following registry key to point them to the correct sovereign cloud for Azure China:
+
   Registry key  | Type | Name | Value
   ------------- | ------------- | ------------- | -------------
   HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\MSIP |  REG_DWORD | CloudEnvType | 6
