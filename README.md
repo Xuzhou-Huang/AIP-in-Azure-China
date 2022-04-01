@@ -1,4 +1,4 @@
-# AIP-by-21Vianet
+# AIP in Azure China
 
 ## It's not supported to protect files without AIP Client Installed
 
