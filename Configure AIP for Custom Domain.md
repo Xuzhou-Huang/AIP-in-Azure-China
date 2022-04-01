@@ -1,4 +1,4 @@
-# Setup AIP Client with custom domain
+# Configure AIP for custom domain
 
 ### Step 1 - Verify Custom Domain on Azure Portal
 
