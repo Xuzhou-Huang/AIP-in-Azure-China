@@ -93,8 +93,8 @@ start-aipscan
 Get-aipscannerstatus
 ```
 
-Check scan reports under **%localappdata%\Microsoft\MSIP\Scanner\Reports**
+Check scanner reports under **%localappdata%\Microsoft\MSIP\Scanner\Reports**
 
-![image](https://user-images.githubusercontent.com/96280581/161262053-a094ac55-8494-40d7-896b-3c0a5660219b.png)
+![image](https://user-images.githubusercontent.com/96280581/161262126-855ca795-d496-4c73-a7ea-0248e357a6e2.png)
 
 
