@@ -52,7 +52,7 @@ AIP apps on Windows need the following registry key to point them to the correct
   ```
 
 
-**Connect to 21V RMS service by manually creating registry keys**
+**Manually create registry keys to Connect to 21V RMS service**
 
   Manually create the following two registry keys, referring to https://docs.microsoft.com/en-us/azure/information-protection/rms-client/client-deployment-notes.
 
