@@ -11,7 +11,7 @@
   ![image](https://user-images.githubusercontent.com/96280581/160785060-49e61399-aacf-4186-9a22-f575eac8c786.png)
 
 
-## AIP Client setup
+## AIP Client/Scanner Setup
 
 To use AIP in Azure China, you need pay special attention to the differences with Global Azure referring to https://docs.microsoft.com/en-us/microsoft-365/admin/services-in-china/parity-between-azure-information-protection?view=o365-21vianet#configure-dns-encryption---windows.
 
