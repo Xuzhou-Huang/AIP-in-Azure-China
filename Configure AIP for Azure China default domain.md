@@ -1,4 +1,4 @@
-# Use AIP Client with Azure China default domain (partner.onmschina.cn)
+# Configure AIP for Azure China default domain (partner.onmschina.cn)
 
 ### Step 1 - Create the *Microsoft Information Protection Sync Service* service principal
 
