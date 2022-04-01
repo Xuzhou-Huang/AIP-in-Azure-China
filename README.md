@@ -10,3 +10,13 @@
   **outlook**
   ![image](https://user-images.githubusercontent.com/96280581/160785060-49e61399-aacf-4186-9a22-f575eac8c786.png)
 
+
+## Useful AIP Powershell commands
+
+```
+PS > Connect-AIPService -EnvironmentName AzureChinaCloud
+
+PS > Get-AipServiceConfiguration | select-Object -ExpandProperty Templates | ft -Autosize
+
+PS > Set-AipServiceTemplateProperty -TemplateID "8dcd174a-be6c-4685-959a-b277079dfed3" -Status Published
+```
