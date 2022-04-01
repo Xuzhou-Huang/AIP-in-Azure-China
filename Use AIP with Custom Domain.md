@@ -14,36 +14,7 @@ The following DNS records are required.
 
 ![image](https://user-images.githubusercontent.com/96280581/161068334-487ec52b-e89d-4b65-8a7c-3294d22399d9.png)
 
-### Step 3 - Create the *Microsoft Information Protection Sync Service* service principal
-
-  The Microsoft Information Protection Sync Service service principal is not available in Azure China tenants by default, and is required for Azure Information Protection.
-
-  The following command only need to be run **for once**. If your tenant already have this service principal, please skip this step.
-
-  ```
-  PS > Connect-azaccount -environmentname azurechinacloud
-
-  Account                                   SubscriptionName             TenantId                             Environment    
-  -------                                   ----------------             --------                             -----------    
-  xuhuan@xxx.partner.onmschina.cn AVD with AAD Dual Federation 97195526-XXXX-XXXX-XXXX-36faa3980a03 AzureChinaCloud
-
-  PS > New-AzADServicePrincipal -ApplicationId 870c4f2e-85b6-4d43-bdda-6ed9a579b725
-
-  DisplayName                                   Id                                   AppId                               
-  -----------                                   --                                   -----                               
-  Microsoft Information Protection Sync Service 7c479261-XXXX-XXXX-XXXX-dd119d4634af 870c4f2e-85b6-4d43-bdda-6ed9a579b725
-  ```
-
-### Step 4 - Point to Azure China Environment to download label and label policies
-
-AIP apps on Windows need the following registry key to point them to the correct sovereign cloud for Azure China:
-
-  Registry key  | Type | Name | Value
-  ------------- | ------------- | ------------- | -------------
-  HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\MSIP |  REG_DWORD | CloudEnvType | 6
-  
-
-### Step 5 - Add DNS record fo RMS discovery
+### Step 3 - Add DNS record for RMS discovery
 
 Add the following SRV records, referring to [doc](https://docs.microsoft.com/en-us/microsoft-365/admin/services-in-china/parity-between-azure-information-protection?view=o365-21vianet#configure-dns-encryption---windows).
 
@@ -65,3 +36,37 @@ DNS Lookup succeeded looking up record for _rmsredir._http._tcp.aip.nowbillions.
        Extranet Url: NULL
        
  ```
+
+### Step 4 - Create the *Microsoft Information Protection Sync Service* service principal
+
+  The Microsoft Information Protection Sync Service service principal is not available in Azure China tenants by default, and is required for Azure Information Protection.
+
+  The following command only need to be run **for once**. If your tenant already have this service principal, please skip this step.
+
+  ```
+  PS > Connect-azaccount -environmentname azurechinacloud
+
+  Account                                   SubscriptionName             TenantId                             Environment    
+  -------                                   ----------------             --------                             -----------    
+  xuhuan@xxx.partner.onmschina.cn AVD with AAD Dual Federation 97195526-XXXX-XXXX-XXXX-36faa3980a03 AzureChinaCloud
+
+  PS > New-AzADServicePrincipal -ApplicationId 870c4f2e-85b6-4d43-bdda-6ed9a579b725
+
+  DisplayName                                   Id                                   AppId                               
+  -----------                                   --                                   -----                               
+  Microsoft Information Protection Sync Service 7c479261-XXXX-XXXX-XXXX-dd119d4634af 870c4f2e-85b6-4d43-bdda-6ed9a579b725
+  ```
+
+### Step 5 - Point to Azure China Environment to download label and label policies
+
+AIP apps on Windows need the following registry key to point them to the correct sovereign cloud for Azure China:
+
+  Registry key  | Type | Name | Value
+  ------------- | ------------- | ------------- | -------------
+  HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\MSIP |  REG_DWORD | CloudEnvType | 6
+
+
+### Step 6 - Logon to AIP Client and verify if labels and templates can be obtained
+
+ ![image](https://user-images.githubusercontent.com/96280581/161203950-d215717a-63c1-406c-b48f-897517131f42.png)
+
