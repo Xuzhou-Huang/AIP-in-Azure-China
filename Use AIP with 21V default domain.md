@@ -4,7 +4,7 @@
 
   The Microsoft Information Protection Sync Service service principal is not available in Azure China tenants by default, and is required for Azure Information Protection.
 
-  The following command only need to be run one time. If your tenant already have this service principal, please skip this step.
+  The following command only need to be run **for once**. If your tenant already have this service principal, please skip this step.
 
   ```
   PS > Connect-azaccount -environmentname azurechinacloud
