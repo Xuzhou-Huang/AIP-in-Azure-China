@@ -1,6 +1,6 @@
 # Use AIP Client with Azure China default domain (partner.onmschina.cn)
 
-### Step 1 - Create the *Microsoft Information Protection Sync Service* service principal
+## Step 1 - Create the *Microsoft Information Protection Sync Service* service principal
 
   The Microsoft Information Protection Sync Service service principal is not available in Azure China tenants by default, and is required for Azure Information Protection.
 
@@ -20,7 +20,7 @@
   Microsoft Information Protection Sync Service 7c479261-XXXX-XXXX-XXXX-dd119d4634af 870c4f2e-85b6-4d43-bdda-6ed9a579b725
   ```
 
-### Step 2 - Point to Azure China Environment to download label and label policies
+## Step 2 - Point to Azure China Environment to download label and label policies
 
 AIP apps on Windows need the following registry key to point them to the correct sovereign cloud for Azure China:
 
@@ -28,9 +28,9 @@ AIP apps on Windows need the following registry key to point them to the correct
   ------------- | ------------- | ------------- | -------------
   HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\MSIP |  REG_DWORD | CloudEnvType | 6
 
-### Step 3 - Connect to your tenant's RMS Service
+## Step 3 - Connect to your tenant's RMS Service
 
-**Connection to RMS service would fail with default configuration**
+### Connection to RMS service would fail with default configuration
 
   Logs under _C:\Users\\\<username>\AppData\Local\Microsoft\MSIPC\Logs_ show the following errors:
 
@@ -49,7 +49,7 @@ AIP apps on Windows need the following registry key to point them to the correct
   ```
 
 
-**Manually create registry keys to Connect to 21V RMS service**
+### Manually create registry keys to Connect to 21V RMS service
 
   Manually create the following two registry keys, referring to https://docs.microsoft.com/en-us/azure/information-protection/rms-client/client-deployment-notes.
 
@@ -91,12 +91,7 @@ AIP apps on Windows need the following registry key to point them to the correct
   DocumentTrackingFeatureState              : Enabled
   ```
 
-Reset AIP client and connection with 21V RMS service would be recovered.
-
-
-----
-
-After configuration above, AIP Client should be able to get and apply labels.
+### Step 4 - Reset AIP Client and it could be recovered to get label and templates
 
 **word**
 ![image](https://user-images.githubusercontent.com/96280581/160986533-b083784d-ac9a-4899-b6fa-2dd07edb8298.png)
