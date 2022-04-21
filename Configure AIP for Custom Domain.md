@@ -18,7 +18,7 @@ The following DNS records are required.
 
 Add the following SRV records, referring to [doc](https://docs.microsoft.com/en-us/microsoft-365/admin/services-in-china/parity-between-azure-information-protection?view=o365-21vianet#configure-dns-encryption---windows).
 
-![image](https://user-images.githubusercontent.com/96280581/161178385-aa9d3c61-5eda-4caf-93a3-76caea6a8947.png)
+![image](https://user-images.githubusercontent.com/96280581/164355612-16dad28a-73dc-4101-9de6-c19cad881fba.png)
 
 This DNS record is used during RMS discovery as follows:
 
