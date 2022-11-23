@@ -27,7 +27,7 @@ Connect to SQL Server with SQL Administrator and grant **sysadmin** role.
 ![image](https://user-images.githubusercontent.com/96280581/161259973-850331bb-bac8-429b-846f-49c6531478cb.png)
 
 
-### Step 4 - Install AIP Client
+### Step 5 - Install AIP Client
 
 > You must have the AIP unified labeling client installed on your machine before installing the scanner. Do not install the client with just the PowerShell module.
 
@@ -37,7 +37,7 @@ Configure the following registry key to point AIP Client to the correct sovereig
   ------------- | ------------- | ------------- | -------------
   HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\MSIP |  REG_DWORD | CloudEnvType | 6
 
-### Step 5 - Install AIP Scanner with Local Administrator
+### Step 6 - Install AIP Scanner with Local Administrator
 
 Use an account that has local administrator rights and that has SQL Server master database Sysadmin role to install the scanner.
 
@@ -47,7 +47,7 @@ PS > Install-AIPScanner -SqlServerInstance localhost\SQLEXPRESS -Cluster xuhuanA
 
 When you are prompted, provide the Active Directory credentials for the scanner service account. For example: aip.nowbillions.com\svc_scanner
 
-### Step 6 - Enable AIP scanner to Run Non-interactively
+### Step 7 - Enable AIP scanner to Run Non-interactively
 
 Follow steps listed [here](https://docs.microsoft.com/en-us/azure/information-protection/rms-client/clientv2-admin-guide-powershell#how-to-label-files-non-interactively-for-azure-information-protection) to configure AIP Scanner authentication.
 
@@ -77,7 +77,7 @@ svc_scanner@aip.nowbillions.com was added to the list of super users for the Azu
 
 ```
 
-### Step 7 - Manage content scan jobs
+### Step 8 - Manage content scan jobs
 
 Download sample files (with sensitive info) to be scanned from https://github.com/InfoProtectionTeam/Files/blob/master/Scripts/docs.zip
 
